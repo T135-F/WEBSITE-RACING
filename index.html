@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Biar video dan audio sejajar */
+        /* Biar video dan teks sejajar */
         .media-container {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 20px;
         }
         button {
@@ -27,11 +27,11 @@
             background: #ffef96;
             color: #333;
             padding: 10px;
-            margin-bottom: 10px;
             border-radius: 6px;
             font-weight: bold;
             text-align: center;
             animation: blink 1.5s infinite;
+            width: 200px;
         }
         @keyframes blink {
             0%, 100% { opacity: 1; }
@@ -40,9 +40,6 @@
     </style>
 </head>
 <body>
-    <!-- Note di atas -->
-    <div class="scroll-note">⬇️ Scroll ke bawah untuk menemukan tombol ▶ Play!</div>
-
     <h1>Website Racing Abis</h1>
     <marquee>SELAMAT DATANG DI WEBSITE RACING YEE🛵💨</marquee>
     <p>INI ADALAH WEBSITE PERTAMA KU</p>
@@ -57,6 +54,12 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
         </iframe>
+
+        <!-- Note di samping video -->
+        <div class="scroll-note">
+            ⬇️ Scroll ke bawah<br>
+            untuk menemukan tombol ▶ Play!
+        </div>
     </div>
 
     <!-- Tombol Play -->
