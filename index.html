@@ -10,7 +10,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-top: 20px;
         }
         button {
             margin-top: 15px;
@@ -20,13 +19,9 @@
             color: white;
             cursor: pointer;
             border-radius: 8px;
-            font-size: 16px;
         }
         button:hover {
             background-color: #0056b3;
-        }
-        iframe {
-            border-radius: 10px;
         }
     </style>
 </head>
@@ -37,27 +32,25 @@
     <p>Nama: Eka Nanda Ivan Wibisana</p>
     <p>NPM: 23630050</p>
 
-    <!-- Tombol Play -->
-    <button onclick="playMedia()">▶ Putar Video YouTube</button>
+    <div class="media-container">
+        <!-- Video YouTube Shorts -->
+        <iframe id="video1" width="315" height="560" src="" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
 
-    <div id="videoContainer" class="media-container"></div>
+    <!-- Tombol Play -->
+    <button onclick="playMedia()">▶ Putar Video & Audio</button>
 
     <script>
         function playMedia() {
-            const container = document.getElementById('videoContainer');
-            // Cegah double klik menghasilkan iframe ganda
-            if (container.innerHTML.trim() !== '') return;
-
-            // Tambahkan iframe YouTube Shorts
-            container.innerHTML = `
-                <iframe width="300" height="534" 
-                    src="https://www.youtube.com/embed/w-3CUqYrfP0?autoplay=1"
-                    title="YouTube video player" 
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            `;
+            const video = document.getElementById('video1');
+            // Ganti link YouTube Shorts agar bisa autoplay
+            const youtubeLink = "https://www.youtube.com/embed/w-3CUqYrfP0?autoplay=1";
+            video.src = youtubeLink;
         }
     </script>
 </body>
