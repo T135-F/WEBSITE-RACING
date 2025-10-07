@@ -5,23 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Tata letak video dan audio */
-        .media-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
         button {
             margin-top: 15px;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #ff6600;
             border: none;
             color: white;
             cursor: pointer;
             border-radius: 8px;
+            font-size: 16px;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #cc5200;
         }
         body {
             font-family: Arial, sans-serif;
@@ -30,7 +25,7 @@
         }
         marquee {
             font-weight: bold;
-            color: #ff6600;
+            color: #007bff;
         }
     </style>
 </head>
@@ -41,33 +36,9 @@
     <p>Nama: Eka Nanda Ivan Wibisana</p>
     <p>NPM: 23630050</p>
 
-    <div class="media-container">
-        <!-- Video -->
-        <video id="video1" width="25%" controls autoplay muted playsinline>
-            <source src="download.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video.
-        </video>
-
-        <!-- Audio -->
-        <audio id="audio1" controls>
-            <source src="audio.mp3" type="audio/mpeg">
-            Browser kamu tidak mendukung audio.
-        </audio>
-    </div>
-
-    <!-- Tombol Play -->
-    <button onclick="playMedia()">▶ Putar Video & Audio</button>
-
-    <script>
-        function playMedia() {
-            const video = document.getElementById('video1');
-            const audio = document.getElementById('audio1');
-            
-            // Aktifkan suara video dan mainkan
-            video.muted = false;
-            video.play();
-            audio.play();
-        }
-    </script>
+    <!-- Tombol untuk buka video YouTube -->
+    <a href="https://www.youtube.com/shorts/w-3CUqYrfP0?autoplay=1" target="_blank">
+        <button>▶ Tonton Video YouTube</button>
+    </a>
 </body>
 </html>
