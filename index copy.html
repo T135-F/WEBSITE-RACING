@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website Racing Abis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Biar video dan audio sejajar */
+        .media-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Racing Abis</h1>
+    <marquee>SELAMAT DATANG DI WEBSITE RACING YEE🛵💨</marquee>
+    <p>INI ADALAH WEBSITE PERTAMA KU</p>
+    <p>Nama: Eka Nanda Ivan Wibisana</p>
+    <p>NPM: 23630050</p>
+
+    <div class="media-container">
+        <!-- Video -->
+        <video id="video1" width="15%">
+            <source src="C:\Users\Teguh\Documents\html\html\download.mp4" type="video/mp4">
+            Browser kamu tidak mendukung video.
+        </video>
+
+        <!-- Audio -->
+        <audio id="audio1">
+            <source src="C:\Users\Teguh\Documents\html\html\audio.mp3" type="audio/mpeg">
+            Browser kamu tidak mendukung audio.
+        </audio>
+    </div>
+
+    <!-- Tombol Play -->
+    <button onclick="playMedia()">▶ Putar Video & Audio</button>
+
+    <script>
+        function playMedia() {
+            const video = document.getElementById('video1');
+            const audio = document.getElementById('audio1');
+            
+            // Unmute dan play
+            video.muted = false;
+            video.play();
+            audio.play();
+        }
+    </script>
+</body>
+</html>
