@@ -5,27 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Biar video dan audio sejajar */
+        .media-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
         button {
             margin-top: 15px;
             padding: 10px 20px;
-            background-color: #ff6600;
+            background-color: #007bff;
             border: none;
             color: white;
             cursor: pointer;
             border-radius: 8px;
-            font-size: 16px;
         }
         button:hover {
-            background-color: #cc5200;
+            background-color: #0056b3;
         }
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        marquee {
-            font-weight: bold;
-            color: #007bff;
+        iframe {
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -36,9 +35,35 @@
     <p>Nama: Eka Nanda Ivan Wibisana</p>
     <p>NPM: 23630050</p>
 
-    <!-- Tombol untuk buka video YouTube -->
-    <a href="https://www.youtube.com/shorts/w-3CUqYrfP0?autoplay=1" target="_blank">
-        <button>▶ Tonton Video YouTube</button>
-    </a>
+    <div class="media-container">
+        <!-- YouTube Shorts pakai iframe -->
+        <iframe id="video1" width="300" height="533" 
+            src="https://www.youtube.com/embed/w-3CUqYrfP0?autoplay=0&mute=0&playsinline=1"
+            title="YouTube Shorts Player"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+
+        <!-- Audio -->
+        <audio id="audio1">
+            <source src="C:\Users\Teguh\Documents\html\html\audio.mp3" type="audio/mpeg">
+            Browser kamu tidak mendukung audio.
+        </audio>
+    </div>
+
+    <!-- Tombol Play -->
+    <button onclick="playMedia()">▶ Putar Video & Audio</button>
+
+    <script>
+        function playMedia() {
+            const audio = document.getElementById('audio1');
+            audio.play();
+
+            // Otomatis play video (YouTube iframe tidak bisa dikontrol langsung lewat JS)
+            const iframe = document.getElementById('video1');
+            iframe.src += "&autoplay=1"; // tambahkan autoplay saat tombol ditekan
+        }
+    </script>
 </body>
 </html>
