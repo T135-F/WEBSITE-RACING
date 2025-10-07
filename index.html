@@ -10,14 +10,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            justify-content: center; /* biar rapi di tengah */
-            margin-top: 20px;
-        }
-        iframe {
-            width: 200px;  /* diperkecil dari 315px */
-            height: 355px; /* disesuaikan agar proporsional */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
         button {
             margin-top: 15px;
@@ -31,9 +23,19 @@
         button:hover {
             background-color: #0056b3;
         }
-        body {
+        .scroll-note {
+            background: #ffef96;
+            color: #333;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 6px;
+            font-weight: bold;
             text-align: center;
-            font-family: Arial, sans-serif;
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
     </style>
 </head>
@@ -46,16 +48,19 @@
 
     <div class="media-container">
         <!-- Video YouTube Shorts -->
-        <iframe id="video1" src=""
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
+        <iframe id="video1" width="315" height="560" src="" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
         </iframe>
     </div>
 
+    <!-- Catatan agar user tahu harus scroll -->
+    <div class="scroll-note">⬇️ Scroll ke bawah untuk menemukan tombol ▶ Play!</div>
+
     <!-- Tombol Play -->
-    <button onclick="playMedia()">▶ Putar Video</button>
+    <button onclick="playMedia()">▶ Putar Video & Audio</button>
 
     <script>
         function playMedia() {
