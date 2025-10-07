@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Biar video dan audio sejajar */
+        /* Tata letak video dan audio */
         .media-container {
             display: flex;
             align-items: center;
@@ -23,6 +23,15 @@
         button:hover {
             background-color: #0056b3;
         }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        marquee {
+            font-weight: bold;
+            color: #ff6600;
+        }
     </style>
 </head>
 <body>
@@ -34,13 +43,13 @@
 
     <div class="media-container">
         <!-- Video -->
-        <video id="video1" width="15%">
+        <video id="video1" width="25%" controls autoplay muted playsinline>
             <source src="download.mp4" type="video/mp4">
             Browser kamu tidak mendukung video.
         </video>
 
         <!-- Audio -->
-        <audio id="audio1">
+        <audio id="audio1" controls>
             <source src="audio.mp3" type="audio/mpeg">
             Browser kamu tidak mendukung audio.
         </audio>
@@ -54,7 +63,7 @@
             const video = document.getElementById('video1');
             const audio = document.getElementById('audio1');
             
-            // Unmute dan play
+            // Aktifkan suara video dan mainkan
             video.muted = false;
             video.play();
             audio.play();
