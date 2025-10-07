@@ -10,6 +10,14 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            justify-content: center; /* biar rapi di tengah */
+            margin-top: 20px;
+        }
+        iframe {
+            width: 200px;  /* diperkecil dari 315px */
+            height: 355px; /* disesuaikan agar proporsional */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
         button {
             margin-top: 15px;
@@ -23,6 +31,10 @@
         button:hover {
             background-color: #0056b3;
         }
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
     </style>
 </head>
 <body>
@@ -34,16 +46,16 @@
 
     <div class="media-container">
         <!-- Video YouTube Shorts -->
-        <iframe id="video1" width="315" height="50" src="" 
-                title="YouTube video player" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
+        <iframe id="video1" src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
         </iframe>
     </div>
 
     <!-- Tombol Play -->
-    <button onclick="playMedia()">▶ Putar Video & Audio</button>
+    <button onclick="playMedia()">▶ Putar Video</button>
 
     <script>
         function playMedia() {
@@ -55,6 +67,3 @@
     </script>
 </body>
 </html>
-
-
-
